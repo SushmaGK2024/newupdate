@@ -9,13 +9,13 @@ app.use(express.json());
 
 // Set up CORS to allow requests from the Netlify domain
 app.use(cors({
-  origin: 'https://majortrail1.netlify.app',
+  origin: 'https://majortrail1.netlify.app/',
   credentials: true
 }));
 
 // Set additional CORS headers
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://majortrail1.netlify.app");
+  res.header("Access-Control-Allow-Origin", "https://majortrail1.netlify.app/");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
