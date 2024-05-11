@@ -76,7 +76,7 @@ const Page2 = ({ currrollno, dispatch, navigate }) => {
       const body = JSON.stringify(newExperience);
 
       const res = await axios.post(
-        "http://localhost:3001/experiences/add-experience",
+        "${process.env.REACT_APP_BACKEND_URL}/experiences/add-experience",
         body,
         config
       );

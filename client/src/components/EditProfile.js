@@ -26,7 +26,7 @@ const EditProfile = (props) => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/users/profile/${id}`, {
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/profile/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -64,7 +64,7 @@ const EditProfile = (props) => {
     };
     console.log("updated data : ", updatedData)
     try {
-      const response = await axios.put(`http://localhost:3001/users/profile/${id}`, updatedData, config);
+      const response = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/users/profile/${id}`, updatedData, config);
       console.log("Response:", response.data);
       alert("Updates are saved successfully!!");
     } catch (error) {

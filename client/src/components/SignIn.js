@@ -13,7 +13,7 @@ const SignIn = ({setcurrrollno}) => {
     // Use the entered rollNo and password
 console.log("geting")
     try {
-      const response = await fetch('http://localhost:3001/users/login', {
+      const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/users/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -24,7 +24,7 @@ const Profile = (props) => {
         // Fetch user profile
         const fetchUserProfile = async () => {
           try {
-            const response = await axios.get(`http://localhost:3001/users/profile/${currrollno}`);
+            const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/profile/${currrollno}`);
             setUser(response.data);
           } catch (error) {
             console.error('Error fetching user profile:', error);
@@ -42,7 +42,7 @@ const Profile = (props) => {
       };
   
       try {
-        const response = await axios.delete(`http://localhost:3001/experiences/experiences/${experienceId}`, config);
+        const response = await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/experiences/experiences/${experienceId}`, config);
         console.log("Delete Response:", response.data); // Log response data if needed
         alert("Experience deleted successfully!!");
         setisexpupdated(!isexpupdated);
@@ -74,7 +74,7 @@ const Profile = (props) => {
     const fetchUserProfile = async () => {
       try {
         const rollno = currrollno;
-        const response = await axios.get(`http://localhost:3001/users/profile/${rollno}`);
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/users/profile/${rollno}`);
        
         setUser(response.data);
         console.log("in fectch")
@@ -91,7 +91,7 @@ const Profile = (props) => {
 
     const fetchExperiences = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/experiences/experience/${currrollno}`, {
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/experiences/experience/${currrollno}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -106,7 +106,7 @@ const Profile = (props) => {
 
     const fetchPlacementRecords = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/placements/placementrecord/${currrollno}`, {
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/placements/placementrecord/${currrollno}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }

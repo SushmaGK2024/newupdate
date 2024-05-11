@@ -25,7 +25,7 @@ const UpdateExperience = (props) => {
   useEffect(() => {
     const fetchExperience = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/experiences/getexperience/${id}`, {
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/experiences/getexperience/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -61,7 +61,7 @@ const UpdateExperience = (props) => {
     };
 
     try {
-      const response = await axios.put(`http://localhost:3001/experiences/experiences/${id}`, updatedData, config);
+      const response = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/experiences/experiences/${id}`, updatedData, config);
       console.log("Response:", response.data);
       alert("Updates are saved successfully!!");
     } catch (error) {

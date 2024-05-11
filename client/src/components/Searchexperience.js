@@ -74,10 +74,10 @@ const CompanyQuestionsModal = ({ show, handleClose, company }) => {
   useEffect(() => {
     const fetchRecentQuestions = async () => {
       try {
-        const technicalResponse = await axios.get(`http://localhost:3001/experiences/recent-technical-questions/${company}`);
+        const technicalResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/experiences/recent-technical-questions/${company}`);
         setTechnicalQuestions(technicalResponse.data);
 
-        const hrResponse = await axios.get(`http://localhost:3001/experiences/recent-hr-questions/${company}`);
+        const hrResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/experiences/recent-hr-questions/${company}`);
         setHRQuestions(hrResponse.data);
       } catch (error) {
         console.error('Error fetching recent questions:', error);
@@ -165,7 +165,7 @@ const SearchExperience = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/experiences/experience`, {
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/experiences/experience`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -174,23 +174,23 @@ const SearchExperience = (props) => {
         setLoading(false);
 
         // Fetch unique company names, years, and roles from the database
-        const companyNamesResponse = await axios.get(`http://localhost:3001/experiences/experience`, {
+        const companyNamesResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/experiences/experience`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
         });
-        //const coresponse = await axios.get('http://localhost:3001/experiences');
+        //const coresponse = await axios.get('${process.env.REACT_APP_BACKEND_URL}/experiences');
         const companyNames = [...new Set(companyNamesResponse.data.map((experience) => experience.company_name))];
         setCompanyNames(companyNames);
          console.log("company names : ", companyNames);
-        const yearsResponse = await axios.get(`http://localhost:3001/experiences/years`, {
+        const yearsResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/experiences/years`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
         });
         setYears(yearsResponse.data.map(year => year.year));
 
-        const rolesResponse = await axios.get(`http://localhost:3001/experiences/roles`, {
+        const rolesResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/experiences/roles`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -211,7 +211,7 @@ const SearchExperience = (props) => {
       console.log("filters : ", filters);
       console.log("sortby : ", sortBy);
       console.log("sortOrder : ", sortOrder);
-      const response = await axios.get(`http://localhost:3001/experiences/search`, {
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/experiences/search`, {
         params: {
           query,
           filters,
@@ -385,7 +385,7 @@ const SearchExperience = (props) => {
       // Update the technicalQuestions state
       const fetchRecenttechQuestions = async () => {
         try {
-          const technicalResponse = await axios.get(`http://localhost:3001/experiences/recent-technical-questions/${company}`, {
+          const technicalResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/experiences/recent-technical-questions/${company}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -406,7 +406,7 @@ const SearchExperience = (props) => {
       const fetchRecenthrQuestions = async () => {
         try {
          
-          const hrResponse = await axios.get(`http://localhost:3001/experiences/recent-hr-questions/${company}`, {
+          const hrResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/experiences/recent-hr-questions/${company}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
