@@ -1,0 +1,131 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /*background: linear-gradient(to bottom, #e0f2fe 0%, #b7def3 50%, #64b5f6 100%);
+  */
+  
+  background: linear-gradient(to bottom, #bcd8f1, #c8eddc);
+  /*background: radial-gradient(circle, #A7DAAE, #F5F3D7, #f3d8ea,#FAF3DD, #FAD0C4, #A3EE9E);
+  background-size: 350% 350%; 
+  animation: multicolorGradient 30s linear infinite;
+  --color-gradient: linear-gradient( to bottom, hsla(36, 31%, 90%, 0) 0%, hsla(36, 31%, 90%, .013) 9.7%, hsla(36, 31%, 90%, .049) 18.1%, hsla(36, 31%, 90%, .104) 25.5%, hsla(36, 31%, 90%, .175) 31.9%, hsla(36, 31%, 90%, .259) 37.7%, hsla(36, 31%, 90%, .352) 43%, hsla(36, 31%, 90%, .45) 47.9%, hsla(36, 31%, 90%, .55) 52.8%, hsla(36, 31%, 90%, .648) 57.7%, hsla(36, 31%, 90%, .741) 63%, hsla(36, 31%, 90%, .825) 68.7%, hsla(36, 31%, 90%, .896) 75%, hsla(36, 31%, 90%, .951) 82.2%, hsla(36, 31%, 90%, .987) 90.5%, hsl(36, 31%, 90%) 100% );
+*/}
+
+.body-style {
+ padding: 20px;  margin: 20px; align-items: center; padding-top:100px; 
+justify-content: center;margin-bottom: 50px;
+}
+
+@keyframes multicolorGradient {
+  0% {
+    background-position: 100% 100%;
+  }
+  
+  100% {
+    background-position: 0% 0%;
+  }
+}
+/*
+body {
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+ 
+  background: radial-gradient(circle, #b3dcb9, #f8f6d8, #edd8e6,#f8f2e0, #fbdbd2, #c1f4be);
+  background-size: 350% 350%; 
+  animation: multicolorGradient 30s linear infinite;
+}
+
+
+@keyframes multicolorGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 50% 50%;
+  }
+}
+*/
+.experiencecard {
+  background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+  color: #000;
+border-radius: 22px;
+font-family: Arial, Helvetica, sans-serif;
+  /*box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.24);*/
+  transition: all 300ms;
+}
+.experiencecard:hover{
+  transform: translateY(-4px);
+  /*box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);*/
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,124 @@
+.container {
+    display: grid;
+    grid-template-columns: 600px 1fr;
+    height: 100vh;
+    
+    width: 100%;
+    max-height: 95vh;
+    padding-left: 25px;
+    padding-right: 20px;
+  }
+  
+ 
+    .left-sidebar {
+        background-color: #fac670;
+        padding: 20px;
+        border-right: 1px solid #ddd;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+  }
+  
+  .right-content {
+    overflow-y: scroll;
+   background: #1b1a19;
+    width: 100%;
+  }
+  .filtercontainer {
+    position: relative;
+    
+    background: #1b1a19;
+    box-shadow: darkgray;
+    border-radius: 0.5rem;
+    padding-top: 17px;
+    padding-left: 10px;
+    padding-right: 20px;
+  }
+  .filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .filter-btn {
+    background-color: #87ceeb; /* pastel blue */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px; /* rounded corners */
+  }
+  
+  .filter-btn.active {
+    background-color: #6495ed; /* darker pastel blue */
+  }
+  
+  .filter-btn:hover {
+    background-color: #87ceeb; /* pastel blue */
+  }
+  
+  .sort-filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .sort-btn {
+    background-color: #ffc5c5; /* pastel pink */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px; /* rounded corners */
+  }
+  .search-btn {
+    background-color: #74da74; /* pastel pink */
+    color: #fff;
+    border: none;
+    width: 23%;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px; /* rounded corners */
+    margin-left: 15px;
+  }
+  .sort-btn.active {
+    background-color: #ffb6c1; /* darker pastel pink */
+  }
+  
+  .sort-btn:hover {
+    background-color: #ffc5c5; /* pastel pink */
+  }
+  
+  .questions-list {
+    display: flex;
+    flex-wrap: wrap;
+    
+    padding: 20px;
+    margin-left: 20px;
+    color: white;
+    height: 75%;
+  }
+  
+  .question-card {
+    background-color: #fff;
+    border-radius: 10px; /* rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* light shadow */
+    padding: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: calc(33.33% - 20px);
+  }
+
+  .cqinput {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 1px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-left: 5%
+}
